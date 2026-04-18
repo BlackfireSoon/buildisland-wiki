@@ -1,0 +1,57 @@
+/* --- THEME CONFIGURATION --- */
+:root {
+    --bg-main: #f9fafb;
+    --bg-sidebar: #1f2937;
+    --text-main: #111827;
+    --text-sidebar: #f3f4f6;
+    --text-sidebar-hover: #9ca3af;
+    --accent-color: #3b82f6;
+    --accent-hover: #2563eb;
+    --border-color: #e5e7eb;
+    --font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+}
+
+/* --- BASE STYLES --- */
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: var(--font-family); background-color: var(--bg-main); color: var(--text-main); display: flex; height: 100vh; overflow: hidden; }
+
+/* --- LAYOUT --- */
+#wiki-container { display: flex; width: 100%; }
+
+/* --- SIDEBAR --- */
+#sidebar { width: 280px; background-color: var(--bg-sidebar); color: var(--text-sidebar); display: flex; flex-direction: column; height: 100vh; overflow-y: auto; }
+.sidebar-header { padding: 20px; font-size: 1.5rem; font-weight: bold; cursor: pointer; text-align: center; border-bottom: 1px solid #374151; background: #111827; }
+.sidebar-header:hover { color: var(--accent-color); }
+
+.search-container { padding: 15px; }
+#search-bar { width: 100%; padding: 10px; border-radius: 6px; border: none; outline: none; }
+
+#nav-menu { padding: 15px; display: flex; flex-direction: column; gap: 10px; }
+.nav-group { margin-bottom: 15px; }
+.nav-title { font-size: 0.85rem; text-transform: uppercase; color: #6b7280; letter-spacing: 0.05em; margin-bottom: 8px; }
+.nav-link { color: var(--text-sidebar); text-decoration: none; display: block; padding: 6px 0; cursor: pointer; transition: color 0.2s; }
+.nav-link:hover, .nav-link.active { color: var(--accent-color); }
+
+/* --- MAIN CONTENT --- */
+#content-area { flex: 1; padding: 40px; overflow-y: auto; background-color: var(--bg-main); }
+#page-content { max-width: 900px; margin: 0 auto; background: white; padding: 40px; border-radius: 8px; box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1); }
+
+/* --- MARKDOWN RENDER STYLES --- */
+#page-content h1 { font-size: 2.5rem; margin-bottom: 20px; color: var(--text-main); border-bottom: 2px solid var(--border-color); padding-bottom: 10px; }
+#page-content h2 { font-size: 1.8rem; margin-top: 30px; margin-bottom: 15px; }
+#page-content p { line-height: 1.7; margin-bottom: 15px; }
+#page-content a { color: var(--accent-color); text-decoration: none; cursor: pointer; }
+#page-content a:hover { text-decoration: underline; }
+#page-content img { max-width: 100%; border-radius: 8px; margin: 20px 0; }
+#page-content ul, #page-content ol { margin-bottom: 15px; padding-left: 20px; }
+#page-content li { margin-bottom: 5px; }
+#page-content code { background: #f1f5f9; padding: 2px 6px; border-radius: 4px; font-family: monospace; color: #e11d48; }
+#page-content pre { background: #1e293b; color: #f8fafc; padding: 15px; border-radius: 8px; overflow-x: auto; margin-bottom: 15px; }
+#page-content pre code { background: transparent; color: inherit; padding: 0; }
+#page-content blockquote { border-left: 4px solid var(--accent-color); padding-left: 15px; color: #4b5563; font-style: italic; margin-bottom: 15px; }
+
+/* --- WIKI CARDS (HOME PAGE) --- */
+.wiki-card-container { display: flex; gap: 20px; margin-top: 20px; }
+.wiki-card { flex: 1; padding: 30px; border-radius: 10px; background: var(--bg-main); border: 2px solid var(--border-color); cursor: pointer; text-align: center; transition: transform 0.2s, border-color 0.2s; }
+.wiki-card:hover { transform: translateY(-5px); border-color: var(--accent-color); }
+.wiki-card h3 { margin-bottom: 10px; font-size: 1.5rem; }
